@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+:root {
+  --card-width: 320px;
+  --card-height: 460px;
+  --gap: 24px;
+  --transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+
+  height: 100vh;
+
+  background-color: #f4f4f4;
+}
+.slider-container {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  position: relative;
+  padding: 1rem 0;
+  margin-right: 2rem;
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  margin: 0 auto;
+  padding: 0 1rem;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: var(--gap);
+}
+
+.card {
+  flex: 0 0 100%;
+  height: var(--card-height);
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(18px, 2vw, 24px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  overflow-y: visible;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.buttons {
+   
+   
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    pointer-events: none;
+
+}
+
+.buttons button {
+ 
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+  pointer-events: auto;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  border: 0px;
+}
+
+
+
+.buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media screen and (min-width: 680px) and (max-width: 979.98px) {
+  .slider-wrapper {
+    max-width: 100%;
+  }
+  
+  .card {
+    flex: 0 0 calc(50% - var(--gap)/2);
+  }
+  
+}
+
+@media screen and (max-width: 679.98px) {
+  .slider-wrapper {
+    max-width: min(var(--card-width), 100%);
+  }
+  
+  .card {
+    width: calc(100% - 2rem);
+    min-width: auto;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  :root {
+    --card-width: 280px;
+  }
+  
+  .slider-wrapper {
+    max-width: 100%;
+  }
+  
+  .card {
+    width: calc(100% - 2rem);
+    min-width: auto;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  
+  .slider-wrapper {
+    max-width: 100%;
+  }
+  
+  .card {
+    flex: 0 0 calc((100% - var(--gap) * 2) / 4);
+  }
+  
+  
+}
+    </style>
+
+</head>
+<body>
+
+    <div class="slider-container">
+        <div class="slider-wrapper">
+          <div class="slider">
+            <div class="card">1</div>
+            <div class="card">2</div>
+            <div class="card">3</div>
+            <div class="card">4</div>
+            <div class="card">5</div>
+            <div class="card">6</div>
+            <div class="card">7</div>
+          </div>
+        </div>
+      
+      </div>
+      
+      <div class="buttons">
+        <button id="prev" aria-label="Show previous items">
+          <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg> -->
+
+          <img src="../../Assests/images/icons/arrow-left1.png"  width="50" height="50" alt="">
+          <span class="sr-only">Show previous items</span>
+        </button>
+        <button id="next" aria-label="Show next items">
+            <img src="../../Assests/images/icons/arrow-right.png"  width="50" height="50" alt="">
+          <span class="sr-only">Show next items</span>
+        </button>
+      </div>
+
+      <script>
+        
+        const slider = document.querySelector('.slider');
+  const cards = document.querySelectorAll('.card');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  const totalCards = cards.length;
+  let index = 0;
+
+
+  function getCardsVisible() {
+    const w = window.innerWidth;
+    if (w < 680) return 1;      
+    else if (w < 980) return 2; 
+    else return 3;              
+  }
+
+  function updateSliderState() {
+    const visible = getCardsVisible();
+    
+
+    prevBtn.disabled = false;
+    nextBtn.disabled = false;
+    
+
+    prevBtn.setAttribute('aria-label', `Show previous ${visible} items`);
+    nextBtn.setAttribute('aria-label', `Show next ${visible} items`);
+    
+
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--gap'));
+    const moveAmount = cardWidth + gap;
+    
+    slider.style.transform = `translateX(-${index * moveAmount}px)`;
+  }
+
+  function handleResize() {
+    // Reset position if current index would be invalid at new screen size
+    const maxIndex = totalCards - getCardsVisible();
+    if (index > maxIndex) {
+      index = maxIndex;
+    }
+    updateSliderState();
+  }
+
+
+  nextBtn.addEventListener('click', () => {
+    const visible = getCardsVisible();
+    if (index < totalCards - visible) {
+      index++;
+    } else {
+      index = 0;
+    }
+    updateSliderState();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+    } else {
+
+      index = totalCards - getCardsVisible();
+    }
+    updateSliderState();
+  });
+
+
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(handleResize, 100);
+  });
+
+
+  updateSliderState();</script>
+</body>
+</html>

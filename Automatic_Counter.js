@@ -13,9 +13,33 @@
         let interval2;
         const targetNumber1 = 70; // Set the target number you want to count up to
         const targetNumber2 = 26;// Set the target number you want to count up to
-    
+
+
+
+        // handle automatic counter logic according to the width of device
+        // let flag=1.0; //ya variable varun kalate ki scroll kartana div kiti visible zalyavar startCounter() call zala pahije i.e 1.0 mhanje 100% ANI 0.5 mhanje 50%
+
+        // //code to access the device width in which the site is openend
+        //  // Get the width of the device's viewport
+        //  const deviceWidth = window.innerWidth;
+        // // Log the device width to the console
+        //  console.log("Device width: " + deviceWidth + "px");
+
+        //  if(deviceWidth<="600px")
+        //  {
+
+        //     flag=0.5;
+
+        //  }
+
+
+
+
+
+
+
         
-            // Function to start counting
+        // Function to start counting
         function startCounter() {
      
        
@@ -60,7 +84,7 @@
                                 }
                             });
                         }, {
-                            threshold: 1.0 // Start counting when 100% of the div is visible in the viewport
+                            threshold: 0.5 // Start counting when 100% of the div is visible in the viewport and if the width of device is below 600 px then Start counting when 50% of the div is visible
                         });
     
             observer.observe(counterContainer); // Start observing the counterContainer div
