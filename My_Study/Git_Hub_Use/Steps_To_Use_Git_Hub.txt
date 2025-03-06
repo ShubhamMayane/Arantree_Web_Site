@@ -28,6 +28,25 @@ After installation, verify by running the following in your terminal/command pro
 
 git --version
 
+
+
+2.1 Now very very important step you should do :
+
+    jo local github setup aahe na tyache configuration set karayache i.e tya local github setup madhe aaple UserName(github varche) Aani email(github madhe registered asnaara) 
+    he configure kayache karan github jecha aapan ekhadi project push karto tevha github server la kalal pahije ki kon aahe jo push karat aahe github konalahi push
+    karaychi permissiion det nahi.so to configure the user name and email to local github setup do following steps:
+
+        hit following commands: steps by step:
+
+        git config --global user.name "Your GitHub Username"
+        git config --global user.email "your-email@example.com"
+
+
+    Now to check the current configured user information inside the local github setup then hit following commands:
+
+        git config --global user.name
+        git config --global user.email
+
 3. Initialize Your Local Project Directory
 
 Open the terminal/command prompt and navigate to your website’s folder. For example:
