@@ -1,15 +1,14 @@
 /*Import statements for fonts*/
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
 
-    font-family: "Jost", sans-serif !important;
-}
 
 body{
 
     background-color: #f9f9f9;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
 }
 
 /* styles for navbar */
@@ -104,7 +103,7 @@ font-weight: 500;
     margin-top: 30px;
     font-size: 60px;
     margin-bottom: 30px;
-    visibility: hidden;
+    
 
 }
 .visible{
@@ -164,13 +163,11 @@ font-weight: 500;
     font-size: 12px;
     padding-left: 5px;
     max-width: 150px;
+    text-align: left;
+
 }
 
-.list-item:hover{
 
-    animation: rubberBand; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 1s; /* don't forget to set a duration! */
-}
 
 
 /* //CSS FOR CARD WITH RIGHT IMAGE */
@@ -476,6 +473,7 @@ font-weight: 200;
 .section-8-row-1-item>h4{
 
     font-weight: 300;
+    line-height: 40px;
    
 }
 .section-8-row-1-item>h4>span{
@@ -548,6 +546,7 @@ font-weight: 200;
 .section-8-row-2-item>h4{
 
     font-weight: 300;
+    line-height: 40px;
    
 }
 .section-8-row-2-item>h4>span{
@@ -698,7 +697,7 @@ font-weight: 200;
     .section-12-container-row-1-col-2 input::placeholder {
         color: white;
         opacity: 1; /* Firefox */
-        font-size: 25px;
+        font-size: 20px;
       }
 
     .section-12-submit-btn{
@@ -714,6 +713,12 @@ font-weight: 200;
         border: none;
         outline: none;
         border-radius: 10px;
+
+      }
+
+      #contactForm{
+
+        width: 70%;
 
       }
 
@@ -775,6 +780,14 @@ font-weight: 200;
 
         box-shadow: 0 4px 2px 0px #8080804f;
     }
+    .right-section{
+
+        text-align: center;
+    }
+
+    .list-item{
+       align-items: center;
+    }
 
       /* code for card with right image */
 
@@ -782,6 +795,11 @@ font-weight: 200;
 
         box-shadow: 0 4px 2px 0px #8080804f;
         padding-bottom: 2px;
+    }   
+
+    .left-section>h2{
+
+        text-align: center;
     }
    
 
@@ -887,9 +905,22 @@ font-weight: 200;
 
             }
 
+            
+            #contactForm{
+
+                width: 100%;
+
+            }
+
   }
 
   /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 
@@ -1023,7 +1054,8 @@ font-weight: 200;
 .about-us-section-6-image-container>img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
+    border-radius: 20px;
   
 }
 .about-us-section-6-card-body{
@@ -1034,22 +1066,62 @@ font-weight: 200;
 }
 .about-us-section-6-card-body-header{
 
-
+    display: flex;
+    align-items: center;
+    gap:5px;
     color: #297d7f;
 
 
 }
 
+
+
 .about-us-section-6-card-body-description{
 
+    font-size: 20px;
 
 }
 .about-us-section-6-card-body>img{
     height: 50px;
     width: 50px;
     align-self: end;
+    border-radius: 10px;
 
 }
+
+
+
+/* code for about-us-section 7 */
+
+
+.about-us-section-7-container{
+    text-align: center;
+    background-color: #e2eced;
+    
+}
+
+.about-us-section-7-sub-container{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+}
+.about-us-section-7-sub-container>h1{
+
+    font-weight: 200;
+
+}
+
+
+
+
+/* <!-- code for  the section-8 --> */
+
+/* it is already mentioned */
+
+
 
 
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -1069,5 +1141,180 @@ font-weight: 200;
     
     }
 
+
+    /* code for about-us-section-6  */
+
+    .about-us-section-4-card>.card-body
+    {
+            text-align: center;
+    }
+    .about-us-section-6-card-body{
+
+            align-items: center;
+            gap:10px
+
+    }
+
+    .about-us-section-6-card-body>img {
+        
+        align-self: center;
+    }
+
+    .about-us-section-6-col{
+
+        margin-bottom: 20px;
+    }
+
+    
+
+}
+
+
+
+
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+ /* css for services.html */
+
+ /* services section _1 */
+ 
+ 
+ .services-section-1-container{
+
+        height: 55vh;
+        background-image: url("./Assests/images/background/services_header.png");
+        background-size: contain;
+        background-position:center;
+        background-repeat: no-repeat;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        padding-left: 2%;
+  }
+
+  .service-section-1-btn{
+
+    width: 300px;
+    height: 200px;
+    color: #087c80;
+    background-color: white;
+    font-weight: 500;
+    font-size: 25px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+  }
+  .services-section-1-container>h1{
+
+    color: white;
+
+  }
+
+ /* services section_2 */
+
+ .services-section-2-container{
+
+    background-color: #297d7f;
+
+
+ }
+
+  .services-section-2-container-row{
+
+    
+    color: white;
+
+  }
+
+  .services-section-2-container-col{
+
+        height: 35vh;
+       padding-top: 5%;
+  }
+
+  .large-text{
+
+    font-size: 100px;
+    font-weight: 800;
+  }
+
+  .services-section-2-container-col > p{
+    font-size: 20px;
+
+  }
+
+
+   /* services section_3 */
+
+   .services-section-3-container>p{
+
+    font-size: 20px;
+
+   }
+
+   .services-section-3-col>h2{
+    color: #087c80;
+
+
+
+   }
+
+   /* services section_4 */
+   .services-section_4-heading{
+
+    text-align: center;
+    color: #087c80;
+
+   }
+
+   .services-section_4-heading>span{
+
+    font-weight: 300;
+
+   }
+
+ /*-----------------------------------------------------------------------------------------------------*/
+ /* code for reponsive design for services.html */
+
+@media screen and (max-width: 600px) {
+
+
+
+    .services-section-1-container{
+
+     
+        background-size: cover;
+        background-position:center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+       
+  }
+
+
+
+  .services-section-2-container-col{
+
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 }

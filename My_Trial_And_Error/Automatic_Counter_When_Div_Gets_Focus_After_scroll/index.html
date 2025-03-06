@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px; /* Just to enable scrolling */
+        }
+
+        #counterDiv {
+            width: 200px;
+            height: 100px;
+            margin-top: 1000px; /* Push the div down the page to make the scroll more noticeable */
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="counterDiv">
+        0
+    </div>
+
+
+    <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+        const counterDiv = document.getElementById("counterDiv");
+        let counter = 0;
+        let interval;
+        const targetNumber = 100; // Set the target number you want to count up to
+
+        // Function to start the counter
+        function startCounter() {
+
+            alert("startCounter() is called");
+            // Reset counter if it's already running
+            clearInterval(interval);
+            interval = setInterval(function() {
+                counter++;
+                counterDiv.innerHTML = counter;
+
+                // Stop the counter when it reaches the target number
+                if (counter >= targetNumber) {
+                    clearInterval(interval);
+                }
+            }, 50); // Increment every 50ms for smooth counting
+        }
+
+        // IntersectionObserver to detect when the div is in view
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCounter(); // Start the counter when div comes into view
+                    observer.disconnect(); // Stop observing once the counter has started
+                }
+            });
+        }, {
+            threshold: 1.0 // Start counting when 50% of the div is visible in the viewport
+        });
+
+        observer.observe(counterDiv); // Start observing the counter div
+
+    });
+    </script>
+    
+</body>
+</html>
