@@ -84,6 +84,9 @@ Push the files from your local repository to the remote GitHub repository by hit
 
 git push -u origin master
 
+7.1Now hit following commadn to select the branch
+    git branch -M main
+
 If you're working with the main branch instead of master, replace master with main by hitting following commnad:
 
 git push -u origin main

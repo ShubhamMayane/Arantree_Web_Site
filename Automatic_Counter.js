@@ -60,7 +60,7 @@
                                 }
                             });
                         }, {
-                            threshold: 0.5 // Start counting when 50% of the div is visible in the viewport
+                            threshold: 1.0 // Start counting when 100% of the div is visible in the viewport
                         });
     
             observer.observe(counterContainer); // Start observing the counterContainer div
