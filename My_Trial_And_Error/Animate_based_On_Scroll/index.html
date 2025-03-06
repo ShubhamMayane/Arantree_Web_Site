@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Animation Example</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+
+    /* Basic page styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.content {
+  height: 2000px; /* So there's enough content to scroll */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.animate-element {
+  width: 300px;
+  height: 200px;
+  background-color: #ff6347;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  transform: translateY(50px);
+  transition: all 0.5s ease;
+}
+
+/* Animation when class is added */
+.animate-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+  </style>
+
+</head>
+<body>
+  <div class="content">
+    <h1>Scroll down to trigger animation</h1>
+  
+
+    <h1 id="title" style="font-size: 100px;">Jay Ganesh</h1>
+  </div>
+
+  <script>
+
+                //this is the code to apply specific class to specific html element on scroll event
+
+                // Select the element to animate
+                const animateElement = document.querySelector('#title');
+
+                // Define the amount of scroll required to trigger the animation
+                const scrollThreshold = 500; // pixels
+
+                // Function to check scroll position and add/remove the class
+                function checkScroll() {
+                    
+                    
+                const scrollPosition = window.scrollY;
+
+                console.log(scrollPosition);
+                // If the user has scrolled more than the threshold, add the 'visible' class
+                if (scrollPosition >= scrollThreshold) {
+                    animateElement.classList.add('animate__animated', 'animate__bounce');
+                } else {
+                    animateElement.classList.remove('animate__animated','animate__bounce');
+                }
+                }
+
+                // Listen to the scroll event
+                window.addEventListener('scroll', checkScroll);
+
+
+  </script>
+</body>
+</html>
