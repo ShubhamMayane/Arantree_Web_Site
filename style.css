@@ -589,7 +589,7 @@ font-weight: 200;
 
        
         width: 100%;
-        height: 30vh;
+        padding-bottom: 5%;
         background-image: url("./Assests/images/background/end_banner.png");
         background-size: cover;
         background-position:center;
@@ -1111,12 +1111,12 @@ font-weight: 200;
 }
 
 .about-us-section-7-sub-container{
-    height: 30vh;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
 }
 .about-us-section-7-sub-container>h1{
 
