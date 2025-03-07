@@ -42,9 +42,10 @@ font-weight: 500;
 }
 
 .fixed-top-nav-bar{
-        position: sticky;
+    position: sticky;
         top: 0;
-      
+        right: 0;
+        left: 0;
         z-index: 1030;
         background: white;
 
@@ -748,6 +749,8 @@ font-weight: 200;
    #contact-us-button{
     display: none;
 }
+
+
 
 
        /* responsiveness  code for header image elements */
@@ -1634,7 +1637,7 @@ background-color: white;
     overflow-y: visible;
     position: relative;
     padding: 1rem 0;
-    margin-right: 2rem;
+  
   }
   
   .section-11-slider-wrapper {
@@ -1655,7 +1658,7 @@ background-color: white;
   
   .section-11-card {
     flex: 0 0 100%;
-    height: var(--card-height);
+    height: auto;
     flex-direction: column;
    
     display: flex;
@@ -1667,6 +1670,31 @@ background-color: white;
     transition: transform 0.3s ease;
     overflow-y: visible;
   }
+
+  .section-11-heading{
+    text-align: center;
+    font-weight: 300;
+    color: #087c80;
+    text-transform: uppercase;
+  }
+
+  .section-11-heading>b{
+    font-weight: bold;
+    color: #087c80;
+  }
+  /* .section-11-card>h1{
+    font-weight: 300;
+    color: #087c80;
+    text-transform: uppercase;
+
+  } */
+
+  /* .section-11-card>h1>b{
+    font-weight: bold;
+    color: #087c80;
+
+  } */
+ 
   
   .section-11-card>img 
   {

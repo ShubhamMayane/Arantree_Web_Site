@@ -75,10 +75,10 @@ section_11_prevBtn.addEventListener('click', () => {
 });
 
 
-let resizeTimeout;
+let section_11_resizeTimeout;
 window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(handleResize, 100);
+    clearTimeout(section_11_resizeTimeout);
+    section_11_resizeTimeout = setTimeout(handleResize, 100);
 });
 
 
