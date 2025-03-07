@@ -94,6 +94,64 @@ function main()
         //sendEmail(name, email, mobile);
     });
 
+
+    //logic to scroll to footer when click on contact us button
+
+      // Get references to the button and the target div
+      const contact_us_button = document.getElementById('contact-us-button');
+      const contact_us_nav_item=document.getElementById("contact-us-nav-item");
+      const targetDiv = document.getElementById('footer-div');
+
+      //to close the navbar after clicking on contact_us_nav_item
+      const navbarCollapse = document.getElementById('navbarNavAltMarkup');
+  
+      // Add click event listener to the button
+      contact_us_button.addEventListener('click', function () {
+  
+        // Scroll to the target div
+        targetDiv.scrollIntoView({
+          behavior: 'smooth',  // Adds smooth scrolling
+          block: 'start'       // Align the target div to the top of the viewport
+        });
+      });
+
+
+        // Add click event listener to the button
+        contact_us_nav_item.addEventListener('click', function () {
+
+            //to close the navbar first 
+          const collapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false // Don't toggle, just close
+          });
+
+          collapse.hide(); // Close the navbar
+          // Scroll to the target div
+          targetDiv.scrollIntoView({
+            behavior: 'smooth',  // Adds smooth scrolling
+            block: 'start'       // Align the target div to the top of the viewport
+          });
+        });
+
+
+        //logic to make a call on button click event 
+         // The phone number you want users to call (replace with your number)
+          const phoneNumber = "9637983156"; 
+
+          // Function to handle the "Call Us" button click
+          function makeCall() {
+            // Check if the device supports "tel:" links (mainly for mobile phones)
+            if (window.innerWidth < 768) {  // Check for mobile devices
+              // Redirect to the "tel:" link
+              window.location.href = `tel:${phoneNumber}`;
+            } else {
+              // For desktops, show an alert or provide instructions
+              alert("Click the link to call us: " + phoneNumber);
+            }
+          }
+
+          document.getElementById("call-us-btn").addEventListener("click",makeCall);
+
+
 }
 
 

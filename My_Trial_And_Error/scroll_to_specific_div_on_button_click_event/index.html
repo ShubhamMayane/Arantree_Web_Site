@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll to Specific Div</title>
+  <style>
+    .content {
+      height: 1000px; /* Just to make the page scrollable */
+      background-color: lightgrey;
+    }
+
+    .target-div {
+      height: 200px;
+      background-color: lightcoral;
+      margin-top: 500px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: royalblue;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Button to trigger scroll -->
+  <button id="scrollButton">Scroll to Div</button>
+
+  <!-- Content to create scrolling -->
+  <div class="content">
+    <h1>Scroll down to see the target div!</h1>
+  </div>
+
+  <!-- The target div to scroll to -->
+  <div id="targetDiv" class="target-div">
+    <h2>This is the target div</h2>
+  </div>
+
+  <script>
+    // Get references to the button and the target div
+    const button = document.getElementById('scrollButton');
+    const targetDiv = document.getElementById('targetDiv');
+
+    // Add click event listener to the button
+    button.addEventListener('click', function () {
+      // Scroll to the target div
+      targetDiv.scrollIntoView({
+        behavior: 'smooth',  // Adds smooth scrolling
+        block: 'start'       // Align the target div to the top of the viewport
+      });
+    });
+  </script>
+
+</body>
+</html>
