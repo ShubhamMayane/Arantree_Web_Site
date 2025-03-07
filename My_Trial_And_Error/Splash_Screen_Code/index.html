@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+    /* Splash Screen Styles */
+            #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            z-index: 9999; /* Ensure splash screen is on top */
+            }
+
+            /* Main Content Styles */
+            #main-content {
+            text-align: center;
+            margin-top: 50px;
+            }
+
+            /* Initial styles for the div */
+            #fade-out-div {
+              background-color: lightblue;
+              padding: 20px;
+              text-align: center;
+              font-size: 1.5rem;
+              border-radius: 8px;
+              animation: fadeOut 0.002s forwards; /* Fade out over 2 seconds */
+            }
+
+            /* Keyframes for fading out */
+            @keyframes fadeOut {
+              from {
+                opacity: 1; /* Start fully visible */
+              }
+              to {
+                opacity: 0; /* End fully invisible */
+              }
+            }
+
+  </style>
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <h1>Loading...</h1>
+  </div>
+
+  <!-- Main Content (Hidden initially) -->
+  <div id="main-content" style="display:none;">
+    <h1>Welcome to My Website!</h1>
+    <p>This is the main content of the site.</p>
+  </div>
+
+  <script>
+
+
+        // Wait for the window to fully load, then hide the splash screen and show the main content
+        window.onload = function() {
+        // Simulate a delay (e.g., 3 seconds) to show the splash screen
+        setTimeout(function() {
+            // Hide splash screen
+            document.getElementById('splash-screen').style.animation="fadeOut 2s forwards";
+
+            // Show main content
+            document.getElementById('main-content').style.display = 'block';
+        }, 3000); // 3000ms = 3 seconds
+        };
+
+
+  </script>
+</body>
+</html>

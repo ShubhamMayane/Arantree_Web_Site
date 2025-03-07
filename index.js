@@ -87,10 +87,11 @@ function main()
             return;
         }
     
+       alert("Thank you for contacting us, We will get back to you soon");
        
     
     // If validation passes, send the form data to the email (via API or backend)
-        sendEmail(name, email, mobile);
+        //sendEmail(name, email, mobile);
     });
 
 }
