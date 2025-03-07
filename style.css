@@ -1,7 +1,5 @@
-/*Import statements for fonts*/
-
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 body{
@@ -573,6 +571,14 @@ font-weight: 200;
 }
 
 
+
+/* mobile only section-8 */
+
+.mobile-only-section-8-container{
+    display: none;
+
+}
+
 /* css for section 9 */
 
     #heading-4{
@@ -609,6 +615,11 @@ font-weight: 200;
         color: white;
         padding-left: 25%;
         padding-top: 5%;
+    }
+
+    .section-11-banner-content>button>h2{
+
+        margin: 0px;
     }
 
     .section-11-banner-content button{
@@ -803,10 +814,7 @@ font-weight: 200;
 
      /* code for card with left image */
 
-    body > div:nth-child(4) > div{
-
-        box-shadow: 0 4px 2px 0px #8080804f;
-    }
+  
     .right-section{
 
         text-align: center;
@@ -880,7 +888,184 @@ font-weight: 200;
             display: none;
         }
 
+
+        /*code for mobile-only-section-8*/
+
+
+        .mobile-only-section-8-container{
+            display: block;
+        }
+
+
+                    
+           
+                /* //code for row 1 */
+           
+
+
+            .mobile-only-section-8-row-1-item{
+
+                
+                    height: auto;
+                    
+                    border-radius: 20px;
+                    background-color: white;
+                    color: #297d7f;
+
+                
+            }
+
+            .mobile-only-section-8-row-1-item.item1{
+
+               
+                height: 200px;
+                background-color: #297d7f;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-transform: uppercase;
+            
+
+                
+            }
+            .mobile-only-section-8-row-1-item.item1>h1{
+                text-align: center;
+            }
+
+
+            .mobile-only-section-8-row-1-item.item2{
+            
+                margin-top: 25px;
+                height: 110%;
+                /* //fot the text */
+
+                /* //logic to align child horizontally and virtically center  using css grid start*/
+                display: grid;
+                place-items: center;
+                /* //logic to align child horizontally and virtically center  using css grid end*/
+            
+                padding: 5%;
+            
+            }
+
+            .mobile-only-section-8-row-1-item.item3{
+
+                margin-top: 25px;
+               
+
+                /* //logic to align child horizontally and virtically center  using css grid start*/
+                display: grid;
+                place-items: center;
+                /* //logic to align child horizontally and virtically center  using css grid end*/
+
+                padding: 5%;
+            }
+
+            .mobile-only-section-8-row-1-item>h4{
+
+                font-weight: 300;
+                line-height: 40px;
+                text-align: center;
+            
+            }
+            .mobile-only-section-8-row-1-item>h4>span{
+
+                font-weight: bold;
+                font-size: 35px;
+                line-height: 30px;
+            }
+
+
+            /* //code for row 2 */
+            .mobile-only-section-8-row-2
+            {
+                
+                justify-content: space-between;
+            }
+
+            .mobile-only-section-8-row-2-item{
+
+            
+                
+                border-radius: 20px;
+                background-color: white;
+                color: #297d7f;
+
+
+            
+            }
+
+            .mobile-only-section-8-row-2-item.item1{
+
+              
+                
+                /* //logic to align child horizontally and virtically center  using css grid start*/
+                display: grid;
+                place-items: center;
+                /* //logic to align child horizontally and virtically center  using css grid end*/
+                background-color: white;
+                color: #297d7f;
+                margin-top: 25px;
+                padding: 5%;
+                
+
+            }
+            .mobile-only-section-8-row-2-item.item2{
+              
+                
+                /* //logic to align child horizontally and virtically center  using css grid start*/
+                display: grid;
+                place-items: center;
+                /* //logic to align child horizontally and virtically center  using css grid end*/
+                margin-top: 25px;
+                padding: 5%;
+            }
+            .mobile-only-section-8-row-2-item.item3{
+
+                
+                /* //logic to align child horizontally and virtically center  using css grid start*/
+                display: grid;
+                place-items: center;
+                /* //logic to align child horizontally and virtically center  using css grid end*/
+                margin-top: 25px;
+                padding: 5%;
+            }
+            .mobile-only-section-8-row-2-item.item4{
+                
+                /* //logic to align child horizontally and virtically center  using css grid start*/
+                display: grid;
+                place-items: center;
+                /* //logic to align child horizontally and virtically center  using css grid end*/
+                margin-top: 25px;
+                padding: 5%;
+            }
+
+            /* code for the text inside the div */
+            .mobile-only-section-8-row-2-item>h4{
+
+                font-weight: 300;
+                line-height: 40px;
+                text-align: center;
+            
+            }
+            .mobile-only-section-8-row-2-item>h4>span{
+
+                font-weight: bold;
+                font-size: 35px;
+                line-height: 30px;
+            }
+
+
+
+
+
+
+
         /* code for section 10 */
+
+
+
         .section-10-container-item{
             position: relative;
             padding: 0px;
@@ -1813,20 +1998,6 @@ background-color: white;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  /*-----------------------------------------------------------------------------------------------------*/
  /* code for reponsive design for services.html */
 
@@ -1937,8 +2108,12 @@ background-color: white;
 
 }
 
-
-/* body{
-
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-} */
+/* //global css which will apply to all tags in this html */
+html *{
+    
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    
+    font-style: normal;
+   
+} 

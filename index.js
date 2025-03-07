@@ -27,7 +27,7 @@ function sendEmail(Name,Email,MobileNo)
         
 
         // send the email here
-        emailjs.send("service_c7t0ue7","template_oswsp0x",dataToSentOnMail).then(
+        emailjs.send(serviceID,templateID,dataToSentOnMail).then(
           (response) => {
             console.log("SUCCESS!", response.status, response.text);
             console.log("success to sent email");
