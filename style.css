@@ -31,6 +31,12 @@ font-weight: 500;
 }
 
 
+#contact-us-nav-item{
+
+    display: none;
+
+}
+
 .nav-button{
 
     height: 50px;
@@ -748,8 +754,17 @@ font-weight: 200;
 
    #contact-us-button{
     display: none;
+    
 }
 
+#contact-us-nav-item{
+
+    display: block;
+    background-color: #087c80;
+    color: white !important;
+    text-align: center;
+    border-radius: 10px;
+}
 
 
 
@@ -798,7 +813,7 @@ font-weight: 200;
     }
 
     .list-item{
-       align-items: center;
+       align-items: left;
     }
 
       /* code for card with right image */
@@ -832,6 +847,12 @@ font-weight: 200;
 
         /*code for section 6*/
 
+        .section-6-left-image {
+        
+                margin-bottom: 20px;
+        }
+        
+        
         .section-6-right-section
         {
                 
@@ -839,6 +860,8 @@ font-weight: 200;
 
         }
 
+        
+        
         .section-6-right-section>h2,p,img{
             text-align: center;
         }
@@ -847,6 +870,8 @@ font-weight: 200;
         {
             align-self: center;
         }
+
+
 
 
         /*Code for section 8*/
