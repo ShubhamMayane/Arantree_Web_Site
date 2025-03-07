@@ -60,7 +60,7 @@
   align-items: center;
   font-size: clamp(18px, 2vw, 24px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+
   transition: transform 0.3s ease;
   overflow-y: visible;
 }
@@ -211,6 +211,8 @@
                 let section_11_index = 0;
 
 
+              
+
                 function section_11_getCardsVisible() {
                     const w = window.innerWidth;
                     if (w < 680) return 1;      
@@ -219,6 +221,8 @@
                 }
 
                 function section_11_updateSliderState() {
+
+
                     const visible = section_11_getCardsVisible();
                     
 
@@ -235,6 +239,11 @@
                     const moveAmount = cardWidth + gap;
                     
                     section_11_slider.style.transform = `translateX(-${section_11_index * moveAmount}px)`;
+
+           
+
+
+
                 }
 
                 function section_11_handleResize() {
@@ -279,6 +288,7 @@
 
 
                 section_11_updateSliderState();
+              
 
       </script>
       
