@@ -875,6 +875,10 @@ font-weight: 400;
 
     }
    
+    /* code for section 3 */
+    .description-section-3 {
+        font-size: 20px;
+    }
 
         /* code for section 4  */
 
@@ -1744,6 +1748,10 @@ font-weight: 400;
 
 
 /* css code for service-section-6 */
+
+
+
+
 .services-section-6-container>h1
 {
     text-align: center;
@@ -2113,6 +2121,12 @@ background-color: white;
 
 /* code for section 6*/
 
+
+.services-section-6-container p{
+
+    font-size: 18px;
+
+}
 .services-section-6-row-1-col-1{
 
     justify-content: center;
