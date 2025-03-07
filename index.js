@@ -6,12 +6,47 @@
 //});
 
 
- 
+//this is the way to call a function
+(function () {
+    emailjs.init("9t7czFOwyJdsrKnoa"); //here you have to write a public key
+  })();
+
+
+function sendEmail(Name,Email,MobileNo)
+{
+        const serviceID = "service_c7t0ue7";
+        const templateID = "template_oswsp0x";
+        
+        let dataToSentOnMail={
+            name:Name,
+            email:Email,
+            mobileno:MobileNo,
+            subject:"Enquiry From Website"
+            }
+        
+        
+
+        // send the email here
+        emailjs.send("service_c7t0ue7","template_oswsp0x",dataToSentOnMail).then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+            console.log("success to sent email");
+            
+            alert("Thank you for an enquiry, We will get back to you soon");
+          },
+          (error) => {
+            console.log("FAILED...", error);
+            console.log("faliure to sent email");
+            alert("FAILED...", error);
+          }
+        );
+
+
+     
 
 
 
-
-
+}
 
 
 function main()
@@ -52,18 +87,11 @@ function main()
             return;
         }
     
-        alert("We will get back to you soon");
+       
     
     // If validation passes, send the form data to the email (via API or backend)
-    // sendEmail(name, email, mobile);
+        sendEmail(name, email, mobile);
     });
-    //for just testing purpose
-    document.getElementById("heading-2").addEventListener("click",function(event){
-
-        alert("clicked on count 1");
-        
-    });
-
 
 }
 

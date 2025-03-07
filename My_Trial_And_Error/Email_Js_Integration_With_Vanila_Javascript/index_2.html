@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact Form</title>
+   <meta name="description" content="Contact form for my Medium article">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <section class="contact">
+   <h1>How can I help you</h1>
+       <form id="contact__form">
+           <!-- Contact number -->
+           <input type="hidden" name="contact_number">
+           <!-- User name -->
+           <label>Name</label>
+           <input type="text" id="user_name" name="user_name" placeholder="name..." required minlength="3">
+           <!-- User email -->
+           <label>Email</label>
+           <input type="email" id="user_email" name="user_email" placeholder="email@adress.com" required>
+           <!-- User message -->
+           <label>mobile</label>
+           <textarea name="mobileno" id="user_mobile" required placeholder="Your message..."></textarea>
+           <!-- Submit button -->
+           <button type="submit" value="Send">Send</button>
+       </form>
+       <!-- Error / Success message -->
+       <div class="message-container">
+           <h3 id="message">Don't Hesitate</h3>
+       </div>
+   </section>
+
+
+   <!-- scripts for email js start -->
+
+   <script type="text/javascript"
+   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script>
+
+// Initializing the EmailJs libary
+(function() {
+    emailjs.init("9t7czFOwyJdsrKnoa");
+})();
+
+
+
+
+
+ function processFormData(e) {
+    alert("processFormData is called");
+    e.preventDefault()
+
+    //  Getting elements
+        const userName = document.getElementById('user_name').value;
+        const userEmail = document.getElementById('user_email').value;
+        const userMobile = document.getElementById('user_mobile').value;
+
+
+
+        const templateParams = {
+            name: userName,
+            email: userEmail,
+            mobileno: userMobile,
+            subject:"email from trial application"
+        }
+            
+    console.log(templateParams);
+    
+    //Sending the formdata
+   
+    emailjs.send("service_c7t0ue7","template_oswsp0x",{
+    name: "shubham",
+    email: "shubham@gmail.com",
+    mobileno: 1212121212,
+    subject: "Enquiry",
+    })
+    .then(function(response){
+        
+        alert("email is sent successfully");
+
+    }, function(error){
+        alert("failed to sent a email");
+    })
+   
+
+}
+
+ 
+ //  Add eventlisteners
+ document.getElementById('contact__form').addEventListener('submit', processFormData);
+
+
+</script>
+
+   <!-- scripts for email js end -->
+
+
+</body>
+</html>
