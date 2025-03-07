@@ -266,13 +266,15 @@ font-weight: 400;
 .section-4-right-item-odd{
 
     background-color: #f0feff;
-    height: 33.3%
+    height: 33.3%;
+    padding-left: 10%;
 }
 
 .section-4-right-item-even{
 
     background-color: white;
-    height: 33.3%
+    height: 33.3%;
+    padding-left: 10%;
 }
 .section-4-list-item img{
     height: 50px;
@@ -321,12 +323,14 @@ font-weight: 400;
 
     background-color: #f0feff;
     height:50%;
+    padding-left: 10%;
 }
 
 .section-4-left-item-even{
 
     background-color: white;
     height: 50%;
+    padding-left: 10%;
 }
 .section-4-list-item img{
     height: 50px;
@@ -339,6 +343,8 @@ font-weight: 400;
 .item>h3{
 
     padding-top: 10px;
+    color:#234c91;
+    align-self: center;
 }
 
 /* code for section 5  */
@@ -1372,6 +1378,7 @@ font-weight: 400;
     width: 50px;
     align-self: end;
     border-radius: 10px;
+    cursor: pointer;
 
 }
 
