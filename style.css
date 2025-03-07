@@ -81,7 +81,11 @@ font-weight: 500;
     align-self: center;
     flex-direction: column;
     color: white;
+   
     
+}
+.header-image>.heading>p{
+    line-height: 100%;
 }
 
 .heading>.big-font{
@@ -92,7 +96,7 @@ font-weight: 500;
 
 .heading>.small-font{
 
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 300;
 }
 
@@ -198,6 +202,7 @@ font-weight: 500;
 .heading-section-3{
 
     color: #087e80;
+    text-transform: uppercase;
 
 }
 
@@ -211,7 +216,7 @@ font-weight: 500;
 .description-section-3{
 
 font-size: 30px;
-font-weight: 200;
+font-weight: 400;
 }
 
 /* //css for section 4 */
@@ -380,8 +385,22 @@ font-weight: 200;
     flex-direction: column;
     justify-content: space-between;
     padding-top: 35px;
+    padding-left: 4%;
 
 
+}
+
+.section-6-heading{
+
+    color: #087c80;
+    text-transform: uppercase;
+    font-weight: 300;
+
+}
+
+.section-6-heading>b{
+
+    font-weight: 600;
 }
 
 .section-6-right-section>img{
@@ -851,6 +870,17 @@ font-weight: 200;
             margin-bottom: 0px !important;
         
         }
+        .section-4-left-item-odd{
+
+           
+            height:auto;
+        }
+        
+        .section-4-left-item-even{
+        
+         
+            height: auto;
+        }
 
 
         /*code for section 6*/
@@ -866,6 +896,10 @@ font-weight: 200;
                 
                 padding-top: 0px;
 
+        }
+        .section-6-heading{
+        
+            text-align: center;
         }
 
         
@@ -1329,6 +1363,7 @@ font-weight: 200;
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
+    padding: 5%;
 }
 .about-us-section-7-sub-container>h1{
 
@@ -1366,6 +1401,10 @@ font-weight: 200;
 
     /* code for about-us-section-6  */
 
+    .about-us-section-6-container {
+        padding: 5%;
+    }
+
     .about-us-section-4-card>.card-body
     {
             text-align: center;
@@ -1387,6 +1426,7 @@ font-weight: 200;
         margin-bottom: 20px;
     }
 
+   
     
 
 }
