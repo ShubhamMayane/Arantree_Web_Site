@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+:root {
+  --card-width: 320px;
+  --card-height: 460px;
+  --gap: 24px;
+  --transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.services-section-11-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+
+}
+.section-11-slider-container {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  position: relative;
+  padding: 1rem 0;
+  margin-right: 2rem;
+}
+
+.section-11-slider-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  margin: 0 auto;
+  padding: 0 1rem;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.section-11-slider {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: var(--gap);
+}
+
+.section-11-card {
+  flex: 0 0 100%;
+  height: var(--card-height);
+  flex-direction: column;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(18px, 2vw, 24px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  overflow-y: visible;
+}
+
+.section-11-card>img 
+{
+    height: 50px;
+    width: 100px;
+}
+
+
+.section-11-buttons {
+  position: absolute;
+  top: 50%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 50;
+}
+
+.section-11-buttons button {
+
+  border: none;
+  width: 40px;
+  height: 40px;
+ border: none;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 50;
+  background-color: transparent;
+}
+
+.section-11-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.section-11-card>h1{
+
+    font-weight: 300;
+}
+
+
+
+
+@media screen and (min-width: 680px) and (max-width: 979.98px) {
+  .section-11-slider-wrapper {
+    max-width: 100%;
+  }
+  
+  .section-11-card {
+    flex: 0 0 calc(50% - var(--gap)/2);
+  }
+  
+}
+
+@media screen and (max-width: 679.98px) {
+  .section-11-slider-wrapper {
+    max-width: min(var(--card-width), 100%);
+  }
+  
+  .section-11-card {
+    width: calc(100% - 2rem);
+    min-width: auto;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  :root {
+    --card-width: 280px;
+  }
+  
+  .section-11-slider-wrapper {
+    max-width: 100%;
+  }
+  
+  .section-11-card {
+    width: calc(100% - 2rem);
+    min-width: auto;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  
+  .section-11-slider-wrapper {
+    max-width: 100%;
+  }
+  
+  .section-11-card {
+    /* flex: 0 0 calc((100% - var(--gap) * 2) / 1); */
+  }
+  
+  
+}
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container services-section-11-container">
+
+
+        <div class="section-11-slider-container">
+            <div class="section-11-slider-wrapper">
+              <div class="section-11-slider">
+                <div class="section-11-card">
+                        <h1><b>Founder</b> Recognitions</h1>
+                        <p>Led the sub-committee on circular economy for B20 
+                            recommendations to the G20 in 2023.
+                        </p>
+                        <img src="../../Assests/images/icons/G2new.png" alt="image is loading">
+                </div>
+                <div class="section-11-card">2</div>
+                <div class="section-11-card">3</div>
+                <div class="section-11-card">4</div>
+                <div class="section-11-card">5</div>
+                <div class="section-11-card">6</div>
+              </div>
+            </div>
+          
+          </div>
+          
+          <div class="section-11-buttons">
+            <button id="section-11-prev" aria-label="Show previous items">
+              
+              <img src="../../Assests/images/icons/arrow-left1.png"  width="40" height="40" alt="">
+            </button>
+            <button id="section-11-next" aria-label="Show next items">
+                <img src="../../Assests/images/icons/arrow-right.png"  width="40" height="40" alt="">
+             
+            </button>
+          </div>
+
+    </div>
+   
+
+      <script>
+
+
+                const section_11_slider = document.querySelector('.section-11-slider');
+                const section_11_cards = document.querySelectorAll('.section-11-card');
+                const section_11_prevBtn = document.getElementById('section-11-prev');
+                const section_11_nextBtn = document.getElementById('section-11-next');
+                const section_11_totalCards = section_11_cards.length;
+                let section_11_index = 0;
+
+
+                function section_11_getCardsVisible() {
+                    const w = window.innerWidth;
+                    if (w < 680) return 1;      
+                    else if (w < 980) return 2; 
+                    else return 3;              
+                }
+
+                function section_11_updateSliderState() {
+                    const visible = section_11_getCardsVisible();
+                    
+
+                    section_11_prevBtn.disabled = false;
+                    section_11_nextBtn.disabled = false;
+                    
+
+                    section_11_prevBtn.setAttribute('aria-label', `Show previous ${visible} items`);
+                    section_11_nextBtn.setAttribute('aria-label', `Show next ${visible} items`);
+                    
+
+                    const cardWidth = section_11_cards[0].offsetWidth;
+                    const gap = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--gap'));
+                    const moveAmount = cardWidth + gap;
+                    
+                    section_11_slider.style.transform = `translateX(-${section_11_index * moveAmount}px)`;
+                }
+
+                function section_11_handleResize() {
+                    // Reset position if current index would be invalid at new screen size
+                    const maxIndex = section_11_index_totalCards - section_11_indexgetCardsVisible();
+                    if (section_11_index > maxIndex) {
+                        section_11_index = maxIndex;
+                    }
+                    section_11_updateSliderState();
+                }
+
+
+                section_11_nextBtn.addEventListener('click', () => {
+                    const visible = section_11_getCardsVisible();
+                    if (section_11_index < section_11_totalCards - visible) {
+                        
+                        section_11_index++;
+
+                    } else {
+                        section_11_index = 0;
+                    }
+                    section_11_updateSliderState();
+                });
+
+                section_11_prevBtn.addEventListener('click', () => {
+                    if (section_11_index > 0) 
+                    {
+                        section_11_index--;
+                    } else {
+
+                        section_11_index = section_11_totalCards - section_11_getCardsVisible();
+                    }
+                    section_11_updateSliderState();
+                });
+
+
+                let resizeTimeout;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(handleResize, 100);
+                });
+
+
+                section_11_updateSliderState();
+
+      </script>
+      
+</body>
+</html>

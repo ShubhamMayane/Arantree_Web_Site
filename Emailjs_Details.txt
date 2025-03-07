@@ -1,3 +1,2 @@
-user id :shubhammayanepaypal@gmail.com
-
-pass :Shubham@1122
+GitHub learning 
+working on responsive ui of index.html I.e home page	
